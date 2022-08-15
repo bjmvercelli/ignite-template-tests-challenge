@@ -3,6 +3,7 @@ import 'express-async-errors';
 
 import express from 'express';
 import cors from 'cors';
+import { config } from "dotenv"
 
 import './database';
 import './shared/container';
@@ -10,6 +11,7 @@ import { router } from './routes';
 import { AppError } from './shared/errors/AppError';
 
 const app = express();
+config();
 
 app.use(cors());
 app.use(express.json());
